@@ -15,7 +15,8 @@ Using a "dimensional reduction" approach, it acts like a scalpel—extracting on
 **Only-Bones** 采用“降维提取”的核心理念。它不只是简单地隐藏网页元素，而是像手术刀一样，精准提取推文最核心的内容（骨架），并在新标签页为你重构一个极其干净、居中的独立 Blog 页面。
 
 ### 最终效果截图 (Final Result Screenshot)
-![screenshot](https://github.com/user-attachments/assets/1350e59c-47be-4461-958c-1cf6c160f6cd)
+![onlybones1](https://github.com/user-attachments/assets/d6c6552e-ecd0-4652-908f-35171c25c3da)
+
 
 ## 🎯 谁需要 Only-Bones？ (Who is this for?)
 * 📖 **深度阅读者 (The Deep Reader)**
@@ -54,6 +55,8 @@ Comment Control: Perfectly preserves the thread's comment hierarchy, featuring a
 
 ## 🚀 使用方法 (Usage)
 打开任意一条带有 `/status/` 的推特/X 推文详情页，点击右上角的“鱼骨头”图标，瞬间进入属于你的纯净阅读世界！
-
 ## How to use:
 Open any specific tweet/thread page on X/Twitter, click the "Fish Bone" icon in your extension bar, and instantly enjoy a pure reading experience!
+![onlybones2](https://github.com/user-attachments/assets/fa245126-129e-4f9a-a0e7-c4fecba6630b)
+
+
