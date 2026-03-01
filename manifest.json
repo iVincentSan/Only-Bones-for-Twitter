@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Only-Bones for X/twitter",
+  "version": "3.1",
+  "description": "智能提取推文，在新标签页生成纯净沉浸式Blog。",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "icons": {
+    "128": "icon.png"
+  },
+  "action": {
+    "default_title": "提取为Blog模式",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
