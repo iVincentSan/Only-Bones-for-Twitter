@@ -14,7 +14,8 @@ Turn any X/Twitter thread into a clean, immersive blog post with one click.
 **Only-Bones** 采用“降维提取”的核心理念。它不只是简单地隐藏网页元素，而是像手术刀一样，精准提取推文最核心的内容（骨架），并在新标签页为你重构一个极其干净、居中的独立 Blog 页面。
 
 ### 最终效果截图 (Final Result Screenshot)
-![Only-Bones 效果图](images/screenshotob.png)
+![screenshot](https://github.com/user-attachments/assets/1350e59c-47be-4461-958c-1cf6c160f6cd)
+
 
 ## ✨ 核心功能 (Features)
 * **纯净提取：** 智能抓取作者头像、ID、发布时间、文本和高清图片，彻底抛弃原有框架。
