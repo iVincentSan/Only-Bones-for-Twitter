@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>纯净阅读 - Blog模式</title>
+  <title>纯净阅读 X推文- 唯美 Blog 模式</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -13,16 +13,16 @@
       display: flex;
       justify-content: center;
     }
+
     #blog-container {
       width: 100%;
       max-width: 650px;
       background: #ffffff;
       border-radius: 16px;
       padding: 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     }
 
-    /* --- 新增：顶部信息表头 --- */
     .page-header {
       margin-bottom: 30px;
       padding-bottom: 20px;
@@ -32,6 +32,7 @@
       line-height: 1.8;
       word-break: break-all;
     }
+
     .page-header a {
       color: #1d9bf0;
       text-decoration: none;
@@ -41,31 +42,37 @@
       padding: 7px 0;
       border-bottom: 1px solid #eff3f4;
     }
-    .tweet-card:last-child { border-bottom: none; }
 
-    /* --- 新增：头像和账号的排版 --- */
+    .tweet-card:last-child {
+      border-bottom: none;
+    }
+
     .author-section {
       display: flex;
       align-items: center;
       margin-bottom: 15px;
     }
+
     .author-avatar {
       width: 48px;
       height: 48px;
       border-radius: 50%;
       margin-right: 12px;
       object-fit: cover;
-      background-color: #eff3f4; /* 图片加载前的底色 */
+      background-color: #eff3f4;
     }
+
     .author-info {
       display: flex;
       flex-direction: column;
     }
+
     .author-name {
       font-weight: bold;
       color: #0f1419;
       font-size: 1.05em;
     }
+
     .author-handle {
       color: #536471;
       font-size: 0.9em;
@@ -76,16 +83,111 @@
       line-height: 1.6;
       white-space: pre-wrap;
       word-wrap: break-word;
+      color: #0f1419 !important;
     }
-    .tweet-text a { color: #1d9bf0; text-decoration: none; }
-    .tweet-text img { height: 1.2em; width: 1.2em; vertical-align: -0.2em; }
-    
-    .tweet-media { margin-top: 16px; display: flex; flex-direction: column; gap: 12px; align-items: center;}
-    .tweet-media img {  width: auto; max-width: 80%; height: auto; border-radius: 12px; }
 
-    .main-tweet .tweet-text { font-size: 1.25em; }
+    .tweet-text * {
+      color: #0f1419 !important;
+      background-image: none !important;
+      -webkit-text-fill-color: #0f1419 !important;
+      opacity: 1 !important;
+    }
 
-    /* --- 新增：折叠评论区的黑色开关 --- */
+    .tweet-text a,
+    .tweet-text a * {
+      color: #1d9bf0 !important;
+      text-decoration: none;
+    }
+
+    .tweet-text img {
+      height: 1.2em;
+      width: 1.2em;
+      vertical-align: -0.2em;
+    }
+
+    .tweet-quotes {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .quoted-tweet {
+      margin: 0;
+      padding: 10px 12px;
+      border-left: 3px solid #1d9bf0;
+      border-radius: 8px;
+      background: #f8fbff;
+      color: #334155;
+      font-size: 0.95em;
+    }
+
+    .quoted-text {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      line-height: 1.5;
+    }
+
+    .quoted-media {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .tweet-media {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .tweet-media img,
+    .quoted-media img {
+      width: auto;
+      max-width: 80%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .video-card,
+    .link-card {
+      width: min(80%, 520px);
+      margin: 0;
+      background: #f3f5f7;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e5eaf0;
+    }
+
+    .video-thumb,
+    .link-card-thumb {
+      width: 100% !important;
+      max-width: none !important;
+      border-radius: 0 !important;
+    }
+
+    .video-meta,
+    .link-card-title {
+      padding: 8px 10px;
+      color: #334155;
+      font-size: 0.9em;
+      font-weight: 600;
+      text-align: right;
+      background: #ffffff;
+    }
+
+    .link-card-title {
+      text-align: left;
+    }
+
+    .main-tweet .tweet-text {
+      font-size: 1.25em;
+    }
+
     .comments-toggle {
       width: 100%;
       height: 15px;
@@ -96,12 +198,14 @@
       transition: transform 0.2s, background-color 0.2s;
       position: relative;
     }
+
     .comments-toggle:hover {
-      background-color: #1d9bf0; /* 鼠标悬停变蓝 */
-      transform: scaleY(1.5);    /* 悬停稍微变粗 */
+      background-color: #1d9bf0;
+      transform: scaleY(1.5);
     }
+
     .comments-toggle::after {
-      content: '点击隐藏/展开后续评论';
+      content: "点击隐藏/展开后续评论";
       position: absolute;
       top: -22px;
       left: 50%;
@@ -112,13 +216,13 @@
       transition: opacity 0.2s;
       white-space: nowrap;
     }
+
     .comments-toggle:hover::after {
-      opacity: 1; /* 鼠标悬停提示文字 */
+      opacity: 1;
     }
 
-    /* 评论区容器 */
     #comments-container {
-      display: block; 
+      display: block;
     }
   </style>
 </head>

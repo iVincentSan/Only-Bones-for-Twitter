@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Only-Bones for X/twitter",
-  "version": "3.1",
+  "version": "3.2",
   "description": "智能提取推文，在新标签页生成纯净沉浸式Blog。",
   "permissions": ["activeTab", "scripting", "storage"],
   "icons": {
